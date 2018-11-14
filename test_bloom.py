@@ -16,8 +16,8 @@ curs = conn.execute('select bloomfilter(data) from register')
 res, = curs.fetchall()[0]
 
 for key in s:
-    print conn.execute('select bloom_contains(?, ?)', (key, res)).fetchone()
-print '----'
+    print(conn.execute('select bloom_contains(?, ?)', (key, res)).fetchone())
+print('----')
 for key in s:
     key = key + '-test'
-    print conn.execute('select bloom_contains(?, ?)', (key, res)).fetchone()
+    print(conn.execute('select bloom_contains(?, ?)', (key, res)).fetchone())
